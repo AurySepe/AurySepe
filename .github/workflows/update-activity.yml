@@ -1,0 +1,74 @@
+name: Update Open Source Activity
+
+on:
+  schedule:
+    # Esegue ogni notte a mezzanotte UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Permette di avviarlo manualmente con un click da GitHub Actions
+
+permissions:
+  contents: write
+
+jobs:
+  update-activity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Fetch Open Source PRs & Update README
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const username = 'AurySepe';
+            
+            // Cerchiamo PR pubbliche create da te, escludendo i repository di cui sei owner
+            const query = `is:pr is:public author:${username} -user:${username}`;
+            const searchResult = await github.rest.search.issuesAndPullRequests({
+              q: query,
+              sort: 'created',
+              order: 'desc',
+              per_page: 5
+            });
+
+            const items = searchResult.data.items;
+            let activityMarkdown = '';
+
+            if (items.length === 0) {
+              activityMarkdown = '*No external pull requests found yet.*';
+            } else {
+              activityMarkdown = items.map(pr => {
+                // repository_url ha formato: https://api.github.com/repos/:owner/:repo
+                const repoName = pr.repository_url.replace('https://api.github.com/repos/', '');
+                const stateEmoji = pr.state === 'closed' ? (pr.pull_request?.merged_at ? '🟣' : '🔴') : '🔀';
+                return `* ${stateEmoji} **[${repoName}#${pr.number}](${pr.html_url})** — ${pr.title}`;
+              }).join('\n');
+            }
+
+            const readmePath = 'README.md'; // Assicurati che il file nel tuo speciale repo AurySepe si chiami README.md
+            const startMarker = '<!--START_SECTION:activity-->';
+            const endMarker = '<!--END_SECTION:activity-->';
+
+            if (!fs.existsSync(readmePath)) {
+              console.log(`File ${readmePath} non trovato, salto la scrittura.`);
+              return;
+            }
+
+            let content = fs.readFileSync(readmePath, 'utf8');
+            const regex = new RegExp(`${startMarker}[\\s\\S]*?${endMarker}`, 'g');
+            
+            if (!regex.test(content)) {
+              console.log('Marker di sezione non trovati nel README.');
+              return;
+            }
+
+            const newContent = content.replace(regex, `${startMarker}\n${activityMarkdown}\n${endMarker}`);
+            fs.writeFileSync(readmePath, newContent);
+
+      - name: Commit & Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update open source activity [skip ci]" && git push)
