@@ -3,6 +3,8 @@
 
 I design and build end-to-end software products with a focus on scalable backend architectures, distributed workflows, and domain-driven design. With a background as a startup technical founder, I care as much about **product velocity, business domain modeling, and user impact** as I do about **system reliability, clean abstractions, and performance**.
 
+> **Note on Repositories**: Most of my core production codebase lives in private repositories tied to commercial startup products and proprietary client systems. Below are architecture highlights, public tools, and open-source contributions that reflect my engineering standards.
+
 ---
 
 ### 💡 Core Focus & Engineering Approach
@@ -23,9 +25,10 @@ I design and build end-to-end software products with a focus on scalable backend
   * Orchestrated LLM workflows for structured entity extraction with strict schema validation and resilient fallback mechanisms.
   * Modeled multi-tenant transactional workflows with PostgreSQL and Prisma.
 
-#### ⚙️ [Job Role Analyzer](https://github.com/AurySepe/Analizzatore-di-ruoli) *(Tooling)*
+#### ⚙️ [Job Role Analyzer](https://github.com/AurySepe/Analizzatore-di-ruoli) *(Public Tooling)*
 > Distributed background worker system and pipeline for intelligent document parsing and profile analysis.
 * **Architecture Highlights**:
+  * Monorepo architecture featuring containerized microservices and Kubernetes/k3d configs.
   * Decoupled producer/consumer architecture for resilient document processing.
   * Automated synthesis and semantic matching pipelines.
 
@@ -60,7 +63,7 @@ Beyond industry products, I've co-authored peer-reviewed research in Software En
 `NestJS` `Fastify` `Redis` `BullMQ` `Prisma` `Event-Driven` `Transactional Outbox` `Domain-Driven Design`
 
 **Cloud, DevOps & Infra**  
-`Docker` `AWS (ECS, Lambda)` `GitHub Actions CI/CD` `Linux`
+`Docker` `Kubernetes (k3d)` `AWS (ECS, Lambda)` `GitHub Actions CI/CD` `Linux`
 
 **Frontend & Interfaces**  
 `React` `Next.js` `Tailwind CSS`
