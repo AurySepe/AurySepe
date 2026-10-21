@@ -23,7 +23,7 @@ I design and build end-to-end software products with a focus on scalable backend
   * Orchestrated LLM workflows for structured entity extraction with strict schema validation and resilient fallback mechanisms.
   * Modeled multi-tenant transactional workflows with PostgreSQL and Prisma.
 
-#### ⚙️ [Job Role Analyzer](https://github.com/AurySepe/role-analyzer) *(Tooling)*
+#### ⚙️ [Job Role Analyzer](https://github.com/AurySepe/Analizzatore-di-ruoli) *(Tooling)*
 > Distributed background worker system and pipeline for intelligent document parsing and profile analysis.
 * **Architecture Highlights**:
   * Decoupled producer/consumer architecture for resilient document processing.
@@ -47,7 +47,7 @@ Here you can follow my journey and contributions, which I hope will grow richer 
 
 Beyond industry products, I've co-authored peer-reviewed research in Software Engineering, Software Metrics, and Human-Computer Interaction during my academic path.
 
-* Explore all my publications on [Google Scholar](https://scholar.google.com/citations?view_op=search_authors&mauthors=Aurelio+Sepe).
+* Explore all my publications on [Google Scholar](https://scholar.google.com/citations?hl=it&user=RZ4gW0wAAAAJ).
 
 ---
 
@@ -70,6 +70,5 @@ Beyond industry products, I've co-authored peer-reviewed research in Software En
 ### 📬 Let's Connect
 
 [![Website](https://img.shields.io/badge/Website-aureliosepe.com-111111?style=flat-square&logo=google-chrome&logoColor=white)](https://aureliosepe.com/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Aurelio_Sepe-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/aureliosepe)
-[![GitHub](https://img.shields.io/badge/GitHub-AurySepe-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/AurySepe)
-[![Google Scholar](https://img.shields.io/badge/Scholar-Publications-4285F4?style=flat-square&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?view_op=search_authors&mauthors=Aurelio+Sepe)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-aurelio--sepe-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aurelio-sepe/)
+[![Google Scholar](https://img.shields.io/badge/Scholar-Publications-4285F4?style=flat-square&logo=google-scholar&logoColor=white)](https://scholar.google.com/citations?hl=it&user=RZ4gW0wAAAAJ)
