@@ -38,6 +38,7 @@ I recently stepped into the open source world, and I'm super proud to have submi
 Here you can follow my journey and contributions, which I hope will grow richer and more abundant over time!
 
 <!--START_SECTION:activity-->
+* 🔀 **[zed-industries/zed#65668](https://github.com/zed-industries/zed/pull/65668)** — language, editor: Compute block auto-indentation deltas using visual …
 <!--END_SECTION:activity-->
 
 ---
